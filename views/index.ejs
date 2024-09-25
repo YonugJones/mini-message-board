@@ -3,12 +3,16 @@
 </head>
 <body>
   <h1>Homepage</h1>
-  <% for (let i = 0; i < messages.length; i++) { %>
-    <li>
-      <p><%= messages[i].text %></p>
-      <p><%= messages[i].user %></p>
-      <p><%= messages[i].added.toLocaleString() %></p>
-    </li>
-  <% } %>
+  <a href="/new">New Message</a>
+  <ul>
+    <% for (let i = 0; i < messages.length; i++) { %>
+      <li>
+        <p><%= messages[i].text %></p>
+        <p><%= messages[i].user %></p>
+        <p><%= messages[i].added.toLocaleString() %></p>
+        <a href="/message/<%= i %>">Open</a>
+      </li>
+    <% } %>
+  </ul>
 </body>
 </html>
