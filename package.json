@@ -1,0 +1,17 @@
+{
+  "name": "mini-message-board",
+  "version": "1.0.0",
+  "description": "mini message board app",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "Peter Kerfoot",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  }
+}
