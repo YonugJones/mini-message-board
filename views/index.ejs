@@ -1,18 +1,17 @@
 <head>
-  <title>Homepage</title>
+  <title><%= title %></title>
 </head>
 <body>
-  <h1>Homepage</h1>
-  <a href="/new">New Message</a>
+  <h1><%= title %></h1>
+  <!-- <a href="/new">New message</a> -->
   <ul>
-    <% for (let i = 0; i < messages.length; i++) { %>
+    <% messages.forEach(function(messages) { %>
       <li>
-        <p><%= messages[i].text %></p>
-        <p><%= messages[i].user %></p>
-        <p><%= messages[i].added.toLocaleString() %></p>
-        <a href="/message/<%= i %>">Open</a>
+        <strong><%= messages.username %></strong>: <%= messages.text %> <br>
+        Added on: <%= messages.added %>
       </li>
-    <% } %>
+    <% }) %>
   </ul>
+
 </body>
 </html>
