@@ -23,6 +23,11 @@ indexRouter.post('/new', (req, res) => {
   res.redirect('/');
 });
 
+// redirect /message to /new
+indexRouter.get('/message', (req, res) => {
+  res.redirect('/new');
+})
+
 indexRouter.get('/message/:id', (req, res) => {
   const messageId = parseInt(req.params.id, 10);
 
