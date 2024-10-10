@@ -8,7 +8,7 @@ async function getMessages(req, res) {
     console.error('Error fetching data:', err);
     res.status(500).send('Internal server error');
   }
-}
+};
 
 async function addMessage(req, res) {
   try {
@@ -19,9 +19,21 @@ async function addMessage(req, res) {
     console.error('Error adding message:', err);
     res.status(500).send('Internal server error');
   }
+};
+
+async function deleteMessage(req, res) {
+  try {
+    const { id } = req.body;
+    await db.deleteMessageQuery(id);
+    res.redirect('/'); 
+  } catch(err) {
+    console.error('Error deleting message:', err);
+    res.status(500).send('Internal server error');
+  }
 }
 
 module.exports = {
   getMessages,
-  addMessage
+  addMessage,
+  deleteMessage
 }

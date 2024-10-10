@@ -3,12 +3,17 @@
 </head>
 <body>
   <h1><%= title %></h1>
-  <!-- <a href="/new">New message</a> -->
+  <a href="/new"><button>NEW MESSAGE</button></a>
   <ul>
-    <% messages.forEach(function(messages) { %>
+    <% messages.forEach(message => { %>
       <li>
-        <strong><%= messages.username %></strong>: <%= messages.text %> <br>
-        Added on: <%= messages.added %>
+        <strong><%= message.username %></strong>: <%= message.text %> <br>
+        Added on: <%= message.added %>
+        <form action="/delete" method="POST">
+          <input type="hidden" name="id", value="<%= message.id %>">
+          <button type="submit">DELETE</button>
+        </form>
+        <br>
       </li>
     <% }) %>
   </ul>
